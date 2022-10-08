@@ -18,9 +18,9 @@ app_secret = os.environ["APP_SECRET"]
 
 user_id = os.environ["USER_ID"]
 template_id = os.environ["TEMPLATE_ID"]
-city_code = '101230508'  # 进入https://where.heweather.com/index.html查询你的城市代码
+# city_code = '101230508'  # 进入https://where.heweather.com/index.html查询你的城市代码
 api = 'http://t.weather.itboy.net/api/weather/city/'  # API地址，必须配合城市代码使用
-
+city_code = os.environ["CITY_CODE"]
 
 
 def get_iciba_everyday ():
