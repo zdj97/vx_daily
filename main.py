@@ -83,7 +83,7 @@ def get_weather_new ():
         #   'msg': tdwt.encode ('utf-8')
         #}
         # requests.post (cpurl, data = data)  # 把天气数据转换成UTF-8格式，不然要报错。
-    return parent, city, date, week, weather_type, shidu,pm25, pm10, quality, fx, fl, ganmao, tips, update_time
+    return parent, city, date, week, weather_type, shidu,pm25, pm10, quality, fx, fl, ganmao, tips, update_time,wendu_high,wendu_low
 
 
 def get_weather ():
@@ -124,8 +124,8 @@ wm = WeChatMessage (client)
 # data = {"weather": {"value": wea}, "temperature": {"value": temperature}, "love_days": {"value": get_count ()},
 #         "birthday_left": {"value": get_birthday ()}, "words": {"value": get_words (), "color": get_random_color ()}}
 
-parent, city, date, week, weather_type, shidu,pm25, pm10, quality, fx, fl, ganmao, tips, update_time=get_weather_new()
+parent, city, date, week, weather_type, shidu,pm25, pm10, quality, fx, fl, ganmao, tips, update_time,wendu_high,wendu_low=get_weather_new()
 loveword=get_words()
-data={'parent':{'value':parent},'city':{'value':city},'date':{'value':date},'week':{'value':week},'weather_type':{'value':weather_type},'shidu':{'value':shidu},'pm25':{'value':pm25},'pm10':{'value':pm10},'quality':{'value':quality},'fx':{'value':fx},'fl':{'value':fl},'ganmao':{'value':ganmao},'tips':{'value':tips},'update_time':{'value':update_time},'loveword':{'value':loveword}}
+data={'parent':{'value':parent},'city':{'value':city},'date':{'value':date},'week':{'value':week},'weather_type':{'value':weather_type},'shidu':{'value':shidu},'pm25':{'value':pm25},'pm10':{'value':pm10},'quality':{'value':quality},'fx':{'value':fx},'fl':{'value':fl},'ganmao':{'value':ganmao},'tips':{'value':tips},'update_time':{'value':update_time},'loveword':{'value':loveword}, 'wendu_high':{'value':wendu_high},'wendu_low':{'value':wendu_low},}
 res = wm.send_template (user_id, template_id, data)
 print (res)
