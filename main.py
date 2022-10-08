@@ -17,7 +17,7 @@ app_secret = os.environ["APP_SECRET"]
 print(app_id)
 app_secret = os.environ["APP_SECRET"]
 # city_code = os.environ["CITY_CODE"]
-city_code=‘101100201’
+city_code='101100201'
 user_id = os.environ["USER_ID"]
 template_id = os.environ["TEMPLATE_ID"]
 # city_code = '101230508'  # 进入https://where.heweather.com/index.html查询你的城市代码
