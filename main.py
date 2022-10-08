@@ -65,7 +65,7 @@ def get_weather_new():
             'msg': tdwt.encode ('utf-8')
         }
         requests.post (cpurl, data = data)  # 把天气数据转换成UTF-8格式，不然要报错。
-    return tdwt
+    return parent,city,date,week,weather_type,weather_type,weather_type,shidupm25,pm10,quality,fx,fl,ganmao,tips,update_time
 
 
 
