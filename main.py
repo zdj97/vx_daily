@@ -38,7 +38,7 @@ def getloverwords ():
     texts = []
     for i in range (1, int (random.randint (3, 83))):
         url = 'https://www.duanwenxue.com/huayu/tianyanmiyu/list_{}.html'.format (i)
-        response = requests.get (url)
+        response = requests.get (url,proxies={'http':None,'https':None})
         texts.append (response.text)
     articles = []
     for text in texts:
