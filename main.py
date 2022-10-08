@@ -74,7 +74,7 @@ def get_weather_new ():
         tips = d["data"]["forecast"][0]["notice"]  # 温馨提示
         # cpurl = 'https://qmsg.zendee.cn/send/' + spkey  # 自己改发送方式，我专门创建了个群来收消息，所以我用的group
         # 天气提示内容
-        tdwt = get_iciba_everyday () + "\n-----------------------------------------" + "\n❤【今日份天气】\n❤城市： " + parent + city + \
+        tdwt = get_iciba_everyday () + "\n-------------------------------------" + "\n❤【今日份天气】\n❤城市： " + parent + city + \
                "\n❤日期： " + date + "\n❤星期: " + week + "\n❤天气: " + weather_type + "\n❤温度: " + wendu_high + " / " + wendu_low + "\n❤湿度: " + \
                shidu + "\n❤PM25: " + pm25 + "\n❤PM10: " + pm10 + "\n❤空气质量: " + quality + \
                "\n❤风力风向: " + fx + fl + "\n❤感冒指数: " + ganmao + "\n❤温馨提示： " + tips + "\n❤更新时间: " + update_time
