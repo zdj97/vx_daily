@@ -126,6 +126,6 @@ wm = WeChatMessage (client)
 
 parent, city, date, week, weather_type, shidu,pm25, pm10, quality, fx, fl, ganmao, tips, update_time=get_weather_new()
 lovewoed=getloverwords()
-data={'parent':parent,'city':city,'date':date,'week':week,'weather_type':weather_type,'shidu':shidu,'pm25':pm25,'pm10':pm10,'quality':quality,'fx':fx,'fl':fl,'ganmao':ganmao,'tips':tips,'update_time':update_time,'loveword':lovewoed}
+data={'parent':{'value':parent},'city':{'value':city},'date':{'value':date},'week':{'value':week},'weather_type':{'value':weather_type},'shidu':{'value':shidu},'pm25':{'value':pm25},'pm10':{'value':pm10},'quality':{'value':quality},'fx':{'value':fx},'fl':{'value':fl},'ganmao':{'value':ganmao},'tips':{'value':tips},'update_time':{'value':update_time},'loveword':{'value':loveword}}
 res = wm.send_template (user_id, template_id, data)
 print (res)
