@@ -73,7 +73,7 @@ def get_weather_new ():
         tips = d["data"]["forecast"][0]["notice"]  # 温馨提示
         # cpurl = 'https://qmsg.zendee.cn/send/' + spkey  # 自己改发送方式，我专门创建了个群来收消息，所以我用的group
         # 天气提示内容
-        tdwt = get_iciba_everyday () + "\n-----------------------------------------" + "\n❤【今日份天气】\n❤城市： " + parent + city + \
+        tdwt = get_iciba_everyday () + "\n-------------------------------------" + "\n❤【今日份天气】\n❤城市： " + parent + city + \
                "\n❤日期： " + date + "\n❤星期: " + week + "\n❤天气: " + weather_type + "\n❤温度: " + wendu_high + " / " + wendu_low + "\n❤湿度: " + \
                shidu + "\n❤PM25: " + pm25 + "\n❤PM10: " + pm10 + "\n❤空气质量: " + quality + \
                "\n❤风力风向: " + fx + fl + "\n❤感冒指数: " + ganmao + "\n❤温馨提示： " + tips + "\n❤更新时间: " + update_time
@@ -82,7 +82,7 @@ def get_weather_new ():
         #   'msg': tdwt.encode ('utf-8')
         #}
         # requests.post (cpurl, data = data)  # 把天气数据转换成UTF-8格式，不然要报错。
-    return parent, city, date, week, weather_type, shidu,pm25, pm10, quality, fx, fl, ganmao, tips, update_time
+    return parent, city, date, week, weather_type, shidu,pm25, pm10, quality, fx, fl, ganmao, tips, update_time,wendu_high,wendu_low
 
 
 def get_weather ():
@@ -123,8 +123,8 @@ wm = WeChatMessage (client)
 # data = {"weather": {"value": wea}, "temperature": {"value": temperature}, "love_days": {"value": get_count ()},
 #         "birthday_left": {"value": get_birthday ()}, "words": {"value": get_words (), "color": get_random_color ()}}
 
-parent, city, date, week, weather_type, shidu,pm25, pm10, quality, fx, fl, ganmao, tips, update_time=get_weather_new()
-lovewoed=getloverwords()
-data={'parent':parent,'city':city,'date':date,'week':week,'weather_type':weather_type,'shidu':shidu,'pm25':pm25,'pm10':pm10,'quality':quality,'fx':fx,'fl':fl,'ganmao':ganmao,'tips':tips,'update_time':update_time,'loveword':lovewoed}
+parent, city, date, week, weather_type, shidu,pm25, pm10, quality, fx, fl, ganmao, tips, update_time,wendu_high,wendu_low=get_weather_new()
+loveword=get_words()
+data={'parent':{'value':parent},'city':{'value':city},'date':{'value':date},'week':{'value':week},'weather_type':{'value':weather_type},'shidu':{'value':shidu},'pm25':{'value':pm25},'pm10':{'value':pm10},'quality':{'value':quality},'fx':{'value':fx},'fl':{'value':fl},'ganmao':{'value':ganmao},'tips':{'value':tips},'update_time':{'value':update_time},'loveword':{'value':loveword}, 'wendu_high':{'value':wendu_high},'wendu_low':{'value':wendu_low},}
 res = wm.send_template (user_id, template_id, data)
 print (res)
