@@ -15,7 +15,6 @@ birthday = os.environ['BIRTHDAY']
 app_id = os.environ["APP_ID"]
 app_secret = os.environ["APP_SECRET"]
 print(app_id)
-app_secret = os.environ["APP_SECRET"]
 # city_code = os.environ["CITY_CODE"]
 city_code='101100201'
 user_id = os.environ["USER_ID"]
